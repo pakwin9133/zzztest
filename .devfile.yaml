@@ -1,0 +1,19 @@
+schemaVersion: 2.1.0
+metadata:
+  name: python-hello-world
+components:
+  - name: tools
+    container:
+      image: dockerreg.busywhale.xyz/busywhale/tech/images/python-base:00.000.006
+      memoryLimit: 512Mi
+      mountSources: true
+
+commands:
+  - id: run-application
+    exec:
+      label: "Run application"
+      component: tools
+      workingDir: ${PROJECT_SOURCE}
+      commandLine: "python hello-world.py"
+      group:
+        kind: run
