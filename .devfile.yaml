@@ -14,6 +14,6 @@ commands:
       label: "Run application"
       component: tools
       workingDir: ${PROJECT_SOURCE}
-      commandLine: "python hello-world.py"
+      commandLine: "/bin/bash"
       group:
         kind: run
